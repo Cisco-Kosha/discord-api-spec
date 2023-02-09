@@ -1,0 +1,52 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "contact": {
+        "email": "eti@cisco.io",
+        "name": "API Support"
+      },
+      "description": "This is a Kosha REST serice for exposing many airtable features as REST APIs with better consistency, observability etc",
+      "termsOfService": "http://swagger.io/terms/",
+      "title": "Discord Connector API",
+      "version": "2.0"
+    },
+    "servers": [
+      {
+        "url": "/"
+      }
+    ],
+    "paths": {
+      "/channels/{channel.id}": {
+        "get": {
+          "parameters": [
+            {
+              "description": "Channel Id",
+              "in": "path",
+              "name": "channel.id",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": ""
+                  }
+                }
+              },
+              "description": "OK"
+            }
+          },
+          "tags": [
+            "Channels"
+          ],
+          "description": "Get Channel",
+          "summary": "Get Channel"
+        }
+      }
+    }
+  }
