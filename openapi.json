@@ -1,52 +1,202 @@
 {
-    "openapi": "3.0.0",
-    "info": {
-      "contact": {
-        "email": "eti@cisco.io",
-        "name": "API Support"
-      },
-      "description": "This is a Kosha REST serice for exposing many airtable features as REST APIs with better consistency, observability etc",
-      "termsOfService": "http://swagger.io/terms/",
-      "title": "Discord Connector API",
-      "version": "2.0"
+  "openapi": "3.0.0",
+  "info": {
+    "contact": {
+      "email": "eti@cisco.io",
+      "name": "API Support"
     },
-    "servers": [
-      {
-        "url": "/"
-      }
-    ],
-    "paths": {
-      "/channels/{channel.id}": {
-        "get": {
-          "parameters": [
-            {
-              "description": "Channel Id",
-              "in": "path",
-              "name": "channel.id",
-              "required": true,
-              "schema": {
-                "type": "string"
-              }
+    "description": "This is a Kosha REST serice for exposing many airtable features as REST APIs with better consistency, observability etc",
+    "termsOfService": "http://swagger.io/terms/",
+    "title": "Discord Connector API",
+    "version": "2.0"
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "paths": {
+    "/channels/{channel.id}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Channel Id",
+            "in": "path",
+            "name": "channel.id",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
-          ],
-          "responses": {
-            "200": {
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": ""
-                  }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
                 }
-              },
-              "description": "OK"
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Channels"
+        ],
+        "description": "Get Channel",
+        "summary": "Get Channel"
+      }
+    },
+    "/channels/{channel.id}/messages/{message.id}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Channel Id",
+            "in": "path",
+            "name": "channel.id",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           },
-          "tags": [
-            "Channels"
-          ],
-          "description": "Get Channel",
-          "summary": "Get Channel"
-        }
+            {
+            "description": "Message Id",
+            "in": "path",
+            "name": "message.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+          
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Messages"
+        ],
+        "description": "Get Message",
+        "summary": "Get Message"
+      }
+    },
+    
+    "/channels/{channel.id}/messages": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Channel Id",
+            "in": "path",
+            "name": "channel.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Messages"
+        ],
+        "description": "Get Messages",
+        "summary": "Get Messages"
+      }
+    },
+    "/guilds/{guild.id}/audit-logs": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Guild Id",
+            "in": "path",
+            "name": "guild.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Audit Logs"
+        ],
+        "description": "Audit Logs",
+        "summary": "Audit Logs"
+      }
+    },
+
+    "/guilds/{guild.id}/auto-moderation/rules/{auto_moderation_rule.id}": {
+      "get": {
+        "parameters": [
+          {
+            "description": "Guild Id",
+            "in": "path",
+            "name": "guild.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "description": "auto_moderation_rule.id",
+            "in": "path",
+            "name": "auto_moderation_rule.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+          }
+          
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": ""
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Auto Generation"
+        ],
+        "description": "Auto Moderation Rule",
+        "summary": "Auto Moderation Rule"
       }
     }
   }
+}
