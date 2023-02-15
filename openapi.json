@@ -34,7 +34,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": ""
+                  "$ref": "#/components/schemas/channels"
                 }
               }
             },
@@ -76,7 +76,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": ""
+                  "$ref": "#/components/schemas/messages"
                 }
               }
             },
@@ -109,7 +109,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": ""
+                  "$ref": "#/components/schemas/messages"
                 }
               }
             },
@@ -141,7 +141,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": ""
+                  "$ref": "#/components/schemas/auditlogs"
                 }
               }
             },
@@ -197,6 +197,276 @@
         "description": "Auto Moderation Rule",
         "summary": "Auto Moderation Rule"
       }
+    }
+  },
+  
+  "components": {
+    "schemas": {
+      "channels":{
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "type": {
+          "type": "integer"
+        },
+        "guild_id": {
+          "type": "string"
+        },
+        "position": {
+          "type": "integer"
+        },
+        "permission_overwrites": {
+          "type": "array",
+          "items": {}
+        },
+        "name": {
+          "type": "string"
+        },
+        "topic": {
+          "type": "string"
+        },
+        "nsfw": {
+          "type": "boolean"
+        },
+        "last_message_id": {
+          "type": "string"
+        },
+        "bitrate": {
+          "type": "integer"
+        },
+        "user_limit": {
+          "type": "integer"
+        },
+        "rate_limit_per_user": {
+          "type": "integer"
+        },
+        "recipients": {
+          "type": "array",
+          "items": {}
+        },
+        "icon": {
+          "type": "string"
+        },
+        "owner_id": {
+          "type": "string"
+        },
+        "application_id": {
+          "type": "string"
+        },
+        "parent_id": {
+          "type": "string"
+        },
+        "last_pin_timestamp": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "guild_id",
+        "position",
+        "permission_overwrites",
+        "name",
+        "topic",
+        "nsfw",
+        "last_message_id",
+        "bitrate",
+        "user_limit",
+        "rate_limit_per_user",
+        "recipients",
+        "icon",
+        "owner_id",
+        "application_id",
+        "parent_id",
+        "last_pin_timestamp"
+      ]
+      }, 
+     
+   "auditlogs":
+    {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "account": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name",
+              "id"
+            ]
+          },
+          "application_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "type",
+          "account",
+          "application_id"
+        ]
+      },
+      
+      "messages":    
+        {
+            "type": "object",
+              "properties": {
+    "id": {
+      "type": "string"
+    },
+    "channel_id": {
+      "type": "string"
+    },
+    "guild_id": {
+      "type": "string"
+    },
+    "author": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "discriminator": {
+          "type": "string"
+        },
+        "avatar": {
+          "type": "string"
+        },
+        "bot": {
+          "type": "boolean"
+        },
+        "verified": {
+          "type": "boolean"
+        },
+        "public_flags": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "id",
+        "username",
+        "discriminator",
+        "avatar",
+        "bot",
+        "verified",
+        "public_flags"
+      ]
+    },
+    "content": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string"
+    },
+    "edited_timestamp": {
+      "type": "string"
+    },
+    "tts": {
+      "type": "boolean"
+    },
+    "mention_everyone": {
+      "type": "boolean"
+    },
+    "mentions": {
+      "type": "array",
+      "items": {}
+    },
+    "mention_roles": {
+      "type": "array",
+      "items": {}
+    },
+    "attachments": {
+      "type": "array",
+      "items": {}
+    },
+    "embeds": {
+      "type": "array",
+      "items": {}
+    },
+    "reactions": {
+      "type": "array",
+      "items": {}
+    },
+    "nonce": {
+      "type": "object"
+    },
+    "pinned": {
+      "type": "boolean"
+    },
+    "webhook_id": {
+      "type": "string"
+    },
+    "type": {
+      "type": "integer"
+    },
+    "activity": {
+      "type": "object"
+    },
+    "application": {
+      "type": "object"
+    },
+    "message_reference": {
+      "type": "object"
+    },
+    "flags": {
+      "type": "integer"
+    },
+    "stickers": {
+      "type": "array",
+      "items": {}
+    },
+    "referenced_message": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "channel_id",
+    "guild_id",
+    "author",
+    "content",
+    "timestamp",
+    "edited_timestamp",
+    "tts",
+    "mention_everyone",
+    "mentions",
+    "mention_roles",
+    "attachments",
+    "embeds",
+    "reactions",
+    "nonce",
+    "pinned",
+    "webhook_id",
+    "type",
+    "activity",
+    "application",
+    "message_reference",
+    "flags",
+    "stickers",
+    "referenced_message"
+  ]
+        }
     }
   }
 }
