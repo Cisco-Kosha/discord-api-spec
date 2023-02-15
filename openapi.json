@@ -156,48 +156,6 @@
       }
     },
 
-    "/guilds/{guild.id}/auto-moderation/rules/{auto_moderation_rule.id}": {
-      "get": {
-        "parameters": [
-          {
-            "description": "Guild Id",
-            "in": "path",
-            "name": "guild.id",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
-          },
-          {
-            "description": "auto_moderation_rule.id",
-            "in": "path",
-            "name": "auto_moderation_rule.id",
-            "required": true,
-            "schema": {
-              "type": "string"
-          }
-          
-          }
-        ],
-        "responses": {
-          "200": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": ""
-                }
-              }
-            },
-            "description": "OK"
-          }
-        },
-        "tags": [
-          "Auto Generation"
-        ],
-        "description": "Auto Moderation Rule",
-        "summary": "Auto Moderation Rule"
-      }
-    }
   },
   
   "components": {
@@ -324,7 +282,7 @@
           "application_id"
         ]
       },
-      
+    
       "messages":    
         {
             "type": "object",
@@ -466,7 +424,11 @@
     "stickers",
     "referenced_message"
   ]
+
+            
+            
+      
         }
-    }
+    },
   }
 }
