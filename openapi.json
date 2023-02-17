@@ -117,6 +117,58 @@
         "summary": "Patch Channel"
       }
     },
+    
+   "/channels/{channel.id}/messages/{message.id}/crosspost": {
+      "post": {
+        "parameters": [
+          {
+            "description": "Channel Id",
+            "in": "path",
+            "name": "channel.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },          {
+            "description": "Message Id",
+            "in": "path",
+            "name": "message.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/channels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+      "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/messages"
+              }
+            }
+          }
+        },
+
+        "tags": [
+          "Messages"
+        ],
+        "description": "Get Channel crosspost",
+        "summary": "Get Channel crosspost"
+      },
+    },
     "/channels/{channel.id}/messages/{message.id}": {
       
       
