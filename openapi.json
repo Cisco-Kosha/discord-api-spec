@@ -46,9 +46,80 @@
         ],
         "description": "Get Channel",
         "summary": "Get Channel"
+      },
+      "delete": {
+        "parameters": [
+          {
+            "description": "Channel Id",
+            "in": "path",
+            "name": "channel.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/channels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Channels"
+        ],
+        "description": "Delete Channel",
+        "summary": "Delete Channel"
+      },
+      "patch": {
+        "parameters": [
+          {
+            "description": "Channel Id",
+            "in": "path",
+            "name": "channel.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+         "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/messages"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/channels"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Channels"
+        ],
+        "description": "Patch Channel",
+        "summary": "Patch Channel"
       }
     },
     "/channels/{channel.id}/messages/{message.id}": {
+      
+      
       "get": {
         "parameters": [
           {
@@ -88,10 +159,100 @@
         ],
         "description": "Get Message",
         "summary": "Get Message"
+      },
+      "patch": {
+        "parameters": [
+          {
+            "description": "Channel Id",
+            "in": "path",
+            "name": "channel.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+            {
+            "description": "Message Id",
+            "in": "path",
+            "name": "message.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+          
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/messages"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/messages"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Messages"
+        ],
+        "description": "Get Message",
+        "summary": "Get Message"
       }
     },
     
     "/channels/{channel.id}/messages": {
+       "post": {
+        "parameters": [
+          {
+            "description": "Channel Id",
+            "in": "path",
+            "name": "channel.id",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+         "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/messages"
+              }
+            }
+          }
+        },
+
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                   "$ref": "#/components/schemas/messages"
+                }
+              }
+            },
+            "description": "OK"
+          }
+        },
+        "tags": [
+          "Messages"
+        ],
+        "description": "post Messages",
+        "summary": "post Messages"
+      },
+    
       "get": {
         "parameters": [
           {
