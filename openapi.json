@@ -5,7 +5,7 @@
       "email": "eti@cisco.io",
       "name": "API Support"
     },
-    "description": "This is a Kosha REST serice for exposing many airtable features as REST APIs with better consistency, observability etc",
+    "description": "This is a Kosha REST serice for exposing many Discord features as REST APIs with better consistency, observability etc",
     "termsOfService": "http://swagger.io/terms/",
     "title": "Discord Connector API",
     "version": "2.0"
