@@ -34,6 +34,30 @@
         "description": "Discord OAuth2 token refresh time",
         "example": "2022-11-18T15:08:55.642141+05:30",
         "helpSection": "Discord OAuth2 token refresh time"
-      }
+      },
+        {
+      "field": "AUTH_TYPE",
+      "displayName": "Discord Auth Type",
+      "type": "String",
+      "minLength": 4,
+      "maxLength": 60,
+      "required": true,
+      "description": "Discord API Auth Type",
+      "default": "OAUTH2",
+      "example": "OAuth2",
+      "helpSection": ""
+    },
+    {
+      "field": "SERVER_URL",
+      "displayName": "Discord Server URL",
+      "type": "String",
+      "minLength": 4,
+      "maxLength": 60,
+      "required": true,
+      "description": "Discord API Server URL",
+      "default": "https://discord.com/api",
+      "example": "https://discord.com/api",
+      "helpSection": "Use the default value https://discord.com/api"
+    }
     ]
   }
